@@ -60,7 +60,7 @@ final class MyHttpHandler: ChannelInboundHandler {
 
         switch reqPart {
             case .head(let header):
-                let request = IncomingMessage(header: header)
+                let request = IncomingMessage(header: header, channel: context.channel)
                 let response = ServerResponse(channel: context.channel)
 
                 // trigger Router
